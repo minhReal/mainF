@@ -1,4 +1,4 @@
--- By Hydro_gen --
+-- By script --
 local gui = Instance.new("ScreenGui")
 gui.Name = "Hi"
 gui.Parent = game.CoreGui
@@ -45,7 +45,7 @@ Hide.Parent = main1
 
 local Label = Instance.new("TextLabel")
 Label.Size = UDim2.new(0.3, 0, 0.5, 0)
-Label.Position = UDim2.new(0.23, 0, 0.2, 0)
+Label.Position = UDim2.new(0.18, 0, 0.2, 0)
 Label.BackgroundColor3 = Color3.new(0, 0, 0)
 Label.BorderColor3 = Color3.new(0, 0, 0)
 Label.BorderSizePixel = 1
@@ -121,7 +121,6 @@ Spawn_Obj.TextColor3 = Color3.new(255, 255, 255)
 Spawn_Obj.Font = Enum.Font.Code
 Spawn_Obj.Parent = main2
 
--- Các chức năng cho nút Close và Hide
 Close.MouseButton1Click:Connect(function()
     main1:Destroy()
 end)
@@ -130,13 +129,11 @@ Hide.MouseButton1Click:Connect(function()
     main2.Visible = not main2.Visible
 end)
 
--- Kết nối sự kiện cho nút Spawn_item
 Spawn_item.MouseButton1Click:Connect(function()
     local itemName = Items.Text
     game:GetService("ReplicatedStorage").WeaponEvent:FireServer(itemName)
 end)
 
--- Kết nối sự kiện cho nút Spawn_Obj
 Spawn_Obj.MouseButton1Click:Connect(function()
     local objectName = Object.Text
     game:GetService("ReplicatedStorage").SpawnObject:FireServer(objectName)
